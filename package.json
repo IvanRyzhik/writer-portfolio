@@ -1,0 +1,29 @@
+{
+  "name": "writer-portfolio-nextjs",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "flowbite": "^3.1.2",
+    "flowbite-react": "^0.12.6",
+    "framer-motion": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-modal": "latest",
+    "react-slick": "latest",
+    "slick-carousel": "latest",
+    "typescript": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "24.2.1",
+    "@types/react": "19.1.9",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  }
+}
