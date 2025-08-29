@@ -1,8 +1,8 @@
 export const articles = [
   {
     id: 1,
+    src: '/images/preview-1.png',
     title: 'How to Deal with Childhood Trauma as an Adult',
-    src: 'https://makeheadway.com/_next/image/?url=https%3A%2F%2Fa.storyblok.com%2Ff%2F181188%2F1600x666%2F750304e249%2Fsilhouette-of-a-head-with-a-teardrop-containing-a-curled-up-child-inside-how-to-deal-with-childhood-trauma.webp&w=1920&q=75',
     alt: 'How to Deal with Childhood Trauma as an Adult',
     preview:
       'Learn how to deal with childhood trauma as an adult using proven therapeutic tools, somatic techniques, and expert book insights to support your healing. Discover practical strategies and comforting truths that can guide your recovery—read on to begin your path to emotional freedom.',
@@ -10,7 +10,7 @@ export const articles = [
   },
   {
     id: 2,
-    src: 'https://www.thehrdirector.com/wp-content/uploads/2025/07/1733341420831.jpg',
+    src: '/images/preview-2.png',
     alt: 'Microlearning Strategies for Reskilling the Modern Workforce: A Practical Guide',
     title: 'Microlearning Strategies for Reskilling the Modern Workforce: A Practical Guide',
     preview:
@@ -20,32 +20,40 @@ export const articles = [
   },
   {
     id: 3,
-    title: 'How to Deal with Childhood Trauma as an Adult',
+    src: '/images/preview-3.png',
+    title: 'Headway vs. Blinkist Comparison: Which Summary App Suits Your Learning Style',
+    alt: 'Headway vs. Blinkist Comparison: Which Summary App Suits Your Learning Style',
     preview:
-      'Learn how to deal with childhood trauma as an adult using proven therapeutic tools, somatic techniques, and expert book insights to support your healing. Discover practical strategies and comforting truths that can guide your recovery—read on to begin your path to emotional freedom.',
-    source: 'https://makeheadway.com/blog/how-to-deal-with-childhood-trauma-as-an-adult/',
+      'Sometimes, I pick up a book I bought, read a few pages, and realize it’s not quite what I expected. Then I suddenly remember why it’s been doing such a great job as a coaster under my mug (at least it’s supporting something)',
+    source: 'https://www.hustleinspireshustle.com/blog/headway-vs-blinkist-comparison',
   },
   {
     id: 4,
-    title: 'Microlearning Strategies for Reskilling the Modern Workforce: A Practical Guide',
+    src: '/images/preview-4.png',
+    title: 'The Morning Routines of Tech CEOs: Habits Backed by Science',
+    alt: 'The Morning Routines of Tech CEOs: Habits Backed by Science',
     preview:
-      'As automation accelerates, reskilling is essential. Microlearning—short, targeted lessons—offers just-in-time knowledge that fits busy schedules and evolving job needs. From scenario-based modules to gamification and peer insights, these strategies enable efficient, relevant learning and foster adaptability, ensuring employees remain competitive in a rapidly changing job market.',
+      'We can’t seem to get enough of CEOs morning routines and their stories. From early wake-ups to silent meditation, these details fill LinkedIn posts and podcasts. But what is it about someone else’s day that keeps us so curious? Part of the fascination comes from hope: the idea that small morning choices might spark bigger changes like increased discipline or even similar success.',
     source:
-      'https://www.thehrdirector.com/microlearning-strategies-reskilling-modern-workforce-practical-guide/',
+      'https://londoninsider.co.uk/the-morning-routines-of-tech-ceos-habits-backed-by-science/',
   },
   {
     id: 5,
-    title: 'How to Deal with Childhood Trauma as an Adult',
+    src: '/images/preview-5.png',
+    title: 'How Upskilling Transforms Entry-Level Employees Into Leaders',
+    alt: 'How Upskilling Transforms Entry-Level Employees Into Leaders',
     preview:
-      'Learn how to deal with childhood trauma as an adult using proven therapeutic tools, somatic techniques, and expert book insights to support your healing. Discover practical strategies and comforting truths that can guide your recovery—read on to begin your path to emotional freedom.',
-    source: 'https://makeheadway.com/blog/how-to-deal-with-childhood-trauma-as-an-adult/',
+      'Being a leader isn’t just about creating strategy decks or writing performance reviews. It often shows up in quieter moments like supporting a teammate or taking responsibility. And that’s exactly where leadership upskilling makes a difference: it helps employees build the mindset, soft skills and confidence to step into these roles.',
+    source: 'https://yulys.com/blog/how-upskilling-transforms-entry-level-employees-into-leaders',
   },
   {
     id: 6,
-    title: 'Microlearning Strategies for Reskilling the Modern Workforce: A Practical Guide',
+    src: '/images/preview-6.png',
+    title: 'Leveraging Microlearning Apps for Enhanced Employee Productivity',
+    alt: 'Leveraging Microlearning Apps for Enhanced Employee Productivity',
     preview:
-      'As automation accelerates, reskilling is essential. Microlearning—short, targeted lessons—offers just-in-time knowledge that fits busy schedules and evolving job needs. From scenario-based modules to gamification and peer insights, these strategies enable efficient, relevant learning and foster adaptability, ensuring employees remain competitive in a rapidly changing job market.',
+      'If your employees enjoy quizzes, rewards or interactive challenges during corporate training, microlearning could be perfect for them. It involves short, focused learning sessions that might include a set of lessons with reading cards, achievements or just statistics with the progress metrics. Some microlearning apps and platforms provide stats with comparison to other users.',
     source:
-      'https://www.thehrdirector.com/microlearning-strategies-reskilling-modern-workforce-practical-guide/',
+      'https://softcircles.com/blog/leveraging-microlearning-apps-for-enhanced-employee-productivity',
   },
 ];

@@ -49,7 +49,10 @@ export default function Home() {
       </Modal>
 
       {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-white py-8 text-center mt-12">
+      <footer
+        id="contact"
+        className="bg-gray-900 text-white py-8 text-center mt-12 absolute w-full bottom-0"
+      >
         <p>
           Contact me at{' '}
           <a href="mailto:john@example.com" className="underline">
