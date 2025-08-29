@@ -8,6 +8,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import ArticlesSlider from '../src/components/ArticlesSlider/ArticlesSlider';
+import HeroSection from '@components/Hero/Hero';
 
 Modal.setAppElement('#__next');
 
@@ -27,29 +28,7 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50 min-h-screen font-sans">
-      {/* <Image
-          src="/images/ksu.jpg"
-          alt="Writer"
-          fill
-          className="object-cover opacity-50 relative z-0"
-        /> */}
-      <section className="relative h-screen flex flex-col justify-center items-center text-center">
-        <div className="relative z-20 px-6">
-          <h1 className="text-5xl font-bold mb-4">Ksenia Melnychenko</h1>
-          <p className="max-w-xl mx-auto text-lg">
-            Creative Content Writer & Storyteller — Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit.
-          </p>
-        </div>
-        <nav className="absolute top-6 flex gap-6 z-20 text-white text-lg">
-          <a href="#articles" className="hover:underline">
-            Articles
-          </a>
-          <a href="#contact" className="hover:underline">
-            Contact
-          </a>
-        </nav>
-      </section>
+      <HeroSection />
 
       <ArticlesSlider openModal={openModal} />
 
