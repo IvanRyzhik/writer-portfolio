@@ -1,13 +1,6 @@
 {
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "jsx": "preserve",
     "plugins": [
@@ -17,43 +10,19 @@
     ],
     "baseUrl": ".",
     "target": "ES6",
-    "lib": [
-      "es2021",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["es2021", "dom", "dom.iterable"],
     "esModuleInterop": true,
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@hooks/*": [
-        "src/hooks/*"
-      ],
-      "@mock-hooks/*": [
-        "src/mock-hooks/*"
-      ],
-      "@mock-actions/*": [
-        "src/mock-actions/*"
-      ],
-      "@lib/*": [
-        "src/lib/*"
-      ],
-      "@config/*": [
-        "config/*"
-      ],
-      "@src/*": [
-        "src/*"
-      ],
-      "@images/*": [
-        "public/images/*"
-      ],
-      "@stores/*": [
-        "src/stores/*"
-      ],
-      "@actions/*": [
-        "src/actions/*"
-      ]
+      "@components/*": ["src/components/*"],
+      "@hooks/*": ["src/hooks/*"],
+      "@mock-hooks/*": ["src/mock-hooks/*"],
+      "@mock-actions/*": ["src/mock-actions/*"],
+      "@lib/*": ["src/lib/*"],
+      "@config/*": ["config/*"],
+      "@src/*": ["src/*"],
+      "@images/*": ["public/images/*"],
+      "@stores/*": ["src/stores/*"],
+      "@actions/*": ["src/actions/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,

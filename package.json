@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "NEXT_PRIVATE_SUPPRESS_WARNINGS=true yarn dev",
+    "dev": "NEXT_PRIVATE_SUPPRESS_WARNINGS=true next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint 'src/**/*.{ts,tsx,js,jsx}'",
@@ -12,8 +12,9 @@
   },
   "dependencies": {
     "flowbite": "^3.1.2",
-    "flowbite-react": "^0.12.6",
+    "flowbite-react": "^0.12.7",
     "framer-motion": "latest",
+    "init": "^0.1.2",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
@@ -39,6 +40,6 @@
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^3.4.17"
   }
 }
