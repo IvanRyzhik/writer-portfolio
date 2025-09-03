@@ -10,7 +10,7 @@ const HeroSection = () => {
             width="200"
             height="200"
             className="rounded-full m-auto mb-5 sm:mb-0 sm:m-0 sm:mr-6 shadow-xl w-[120px] h-[120px] md:w-[200px] md:h-[200px] object-cover border-white border"
-            src="/images/ksu.png"
+            src="/images/Ksu.png"
             alt="avatar"
           />
           <div className="mx-auto sm:mx-0 sm:my-0 mb-0 sm:mb-4 p-2 w-fit">
