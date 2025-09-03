@@ -1,22 +1,40 @@
 import React from 'react';
-import Slider from 'react-slick';
+import { useKeenSlider } from 'keen-slider/react';
 import { Card } from 'flowbite-react';
 
 import { articles } from '../../../source/articles';
-import { sliderSettings } from './settings';
 
 type ArticlesSliderProps = {
   openModal: (url: string) => void;
 };
 
 const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      loop: true,
+      slides: {
+        perView: 1,
+        spacing: 16,
+      },
+      breakpoints: {
+        '(min-width: 768px)': {
+          slides: { perView: 2, spacing: 16 },
+        },
+        '(min-width: 1024px)': {
+          slides: { perView: 3, spacing: 16 },
+        },
+      },
+    },
+    []
+  );
+
   return (
-    <section id="articles" className="p-4 md:p-8">
-      <h2 className="text-2xl md:text-4xl font-bold text-center mb-0 md:mb-10">Latest Articles</h2>
-      <div className="slider-container">
-        <Slider className="flex items-stretch" {...sliderSettings}>
+    <section id="articles" className="p-8">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 md:mb-10">Latest Articles</h2>
+      <div className="slider-container relative">
+        <div ref={sliderRef} className="keen-slider">
           {articles.map((article) => (
-            <div key={article.title} className="px-2 md:px-4 h-full flex">
+            <div key={article.title} className="keen-slider__slide h-full flex px-2 md:px-4 pb-6">
               <Card
                 className="flex flex-col h-full block-shadow"
                 renderImage={() => (
@@ -52,7 +70,27 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
               </Card>
             </div>
           ))}
-        </Slider>
+        </div>
+        <button
+          type="button"
+          aria-label="Previous"
+          onClick={() => instanceRef.current?.prev()}
+          className="absolute -left-10 md:-left-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 md:w-6 md:h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          aria-label="Next"
+          onClick={() => instanceRef.current?.next()}
+          className="absolute -right-10 md:-right-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 md:w-6 md:h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
       </div>
     </section>
   );

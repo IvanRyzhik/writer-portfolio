@@ -4,8 +4,7 @@
 import React from 'react';
 import { useState } from 'react';
 import Modal from 'react-modal';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import 'keen-slider/keen-slider.min.css';
 
 import ArticlesSlider from '../src/components/ArticlesSlider/ArticlesSlider';
 import HeroSection from '@components/Hero/Hero';
@@ -27,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-50 sm:min-h-screen font-sans p-3 md:p-6 pb-16 md:pb-24 relative">
+    <div className="bg-gray-50 min-h-screen font-sans p-3 md:p-6 pb-16 md:pb-24 relative">
       <HeroSection />
 
       <ArticlesSlider openModal={openModal} />

@@ -18,12 +18,12 @@
     "flowbite-react": "^0.12.7",
     "framer-motion": "latest",
     "init": "^0.1.2",
+    "keen-slider": "^6.8.6",
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-modal": "latest",
     "react-slick": "latest",
-    "slick-carousel": "latest",
     "typescript": "latest"
   },
   "devDependencies": {
