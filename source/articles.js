@@ -47,13 +47,13 @@ export const articles = [
     source:
       'https://www.thehrdirector.com/microlearning-strategies-reskilling-modern-workforce-practical-guide/',
   },
-  {
-    id: 1,
-    src: '/images/preview-1.png',
-    title: 'How to Deal with Childhood Trauma as an Adult',
-    alt: 'How to Deal with Childhood Trauma as an Adult',
-    preview:
-      'Learn how to deal with childhood trauma as an adult using proven therapeutic tools, somatic techniques, and expert book insights to support your healing. Discover practical strategies and comforting truths that can guide your recovery—read on to begin your path to emotional freedom.',
-    source: 'https://makeheadway.com/blog/how-to-deal-with-childhood-trauma-as-an-adult/',
-  },
+  // {
+  //   id: 1,
+  //   src: '/images/preview-1.png',
+  //   title: 'How to Deal with Childhood Trauma as an Adult',
+  //   alt: 'How to Deal with Childhood Trauma as an Adult',
+  //   preview:
+  //     'Learn how to deal with childhood trauma as an adult using proven therapeutic tools, somatic techniques, and expert book insights to support your healing. Discover practical strategies and comforting truths that can guide your recovery—read on to begin your path to emotional freedom.',
+  //   source: 'https://makeheadway.com/blog/how-to-deal-with-childhood-trauma-as-an-adult/',
+  // },
 ];
