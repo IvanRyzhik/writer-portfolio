@@ -53,3 +53,9 @@
     right: -13px;
   }
 }
+
+.shadow-text {
+  color: #ffffff;
+  -webkit-text-stroke: 1px #ffffff;
+  text-stroke: 1px #bbbaba;
+}

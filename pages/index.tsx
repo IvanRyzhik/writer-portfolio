@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { useState } from 'react';
 import Modal from 'react-modal';
 import 'keen-slider/keen-slider.min.css';
@@ -26,8 +27,21 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen font-sans p-3 md:p-6 pb-16 md:pb-24 relative">
-      <HeroSection />
+    <div className="bg-gray-50 min-h-screen font-sans pt-0 md:pt-0 p-3 md:p-6 pb-16 md:pb-24 relative">
+      <div className="relative py-10">
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-screen h-[280px] sm:h-[200px] md:h-[280px]">
+          <Image
+            src="/images/background.png"
+            alt="Hero background"
+            fill
+            sizes="100vw"
+            priority
+            className="object-cover"
+          />
+          <div aria-hidden className="absolute inset-0 bg-black/30 pointer-events-none" />
+        </div>
+        <HeroSection />
+      </div>
 
       <ArticlesSlider openModal={openModal} />
 
@@ -46,7 +60,6 @@ export default function Home() {
         </button>
       </Modal>
 
-      {/* Footer */}
       <footer
         id="contact"
         className="bg-gray-900 text-white py-4 md:py-8 text-center absolute w-full bottom-0 left-0"
