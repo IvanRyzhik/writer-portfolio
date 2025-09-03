@@ -75,29 +75,21 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
           type="button"
           aria-label="Previous"
           onClick={() => instanceRef.current?.prev()}
-          className="absolute -left-10 md:-left-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-1 md:p-2 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
+          className="absolute -left-10 md:-left-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
         >
-          <img
-            src="/images/cats-paw.png"
-            alt="Previous"
-            className="w-7 h-7 md:w-8 md:h-8 object-contain transform -rotate-90"
-            width={32}
-            height={32}
-          />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 md:w-6 md:h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
         <button
           type="button"
           aria-label="Next"
           onClick={() => instanceRef.current?.next()}
-          className="absolute -right-10 md:-right-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-1 md:p-2 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
+          className="absolute -right-10 md:-right-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
         >
-          <img
-            src="/images/cats-paw.png"
-            alt="Next"
-            className="w-7 h-7 md:w-8 md:h-8 object-contain transform rotate-90"
-            width={32}
-            height={32}
-          />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 md:w-6 md:h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
         </button>
       </div>
     </section>

@@ -24,7 +24,7 @@
   z-index: 0;
 }
 
-.kitty-block::after {
+/* .kitty-block::after {
   content: '';
   position: absolute;
   bottom: -20px;
@@ -35,7 +35,7 @@
   background-size: contain;
   background-repeat: no-repeat;
   z-index: -1;
-}
+} */
 
 .block-shadow {
   box-shadow: 7px 6px 5px 0px rgba(204,204,204,0.75);
