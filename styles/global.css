@@ -36,3 +36,20 @@
   background-repeat: no-repeat;
   z-index: -1;
 }
+
+.block-shadow {
+  box-shadow: 7px 6px 5px 0px rgba(204,204,204,0.75);
+  -webkit-box-shadow: 7px 6px 5px 0px rgba(204,204,204,0.75);
+  -moz-box-shadow: 7px 6px 5px 0px rgba(204,204,204,0.75);
+}
+
+.slick-list {
+  padding: 25px 0 !important;
+}
+
+@media (max-width: 768px) {
+  .kitty-block::after {
+    bottom: -28px;
+    right: -13px;
+  }
+}

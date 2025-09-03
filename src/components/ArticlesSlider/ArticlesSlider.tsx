@@ -1,7 +1,6 @@
 import React from 'react';
 import Slider from 'react-slick';
 import { Card } from 'flowbite-react';
-import Image from 'next/image';
 
 import { articles } from '../../../source/articles';
 import { sliderSettings } from './settings';
@@ -12,14 +11,14 @@ type ArticlesSliderProps = {
 
 const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
   return (
-    <section id="articles" className="py-8 px-8">
-      <h2 className="text-4xl font-bold text-center mb-10">Latest Articles</h2>
+    <section id="articles" className="p-4 md:p-8">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-0 md:mb-10">Latest Articles</h2>
       <div className="slider-container">
         <Slider className="flex items-stretch" {...sliderSettings}>
           {articles.map((article) => (
-            <div key={article.title} className="px-4 h-full flex">
+            <div key={article.title} className="px-2 md:px-4 h-full flex">
               <Card
-                className="flex flex-col h-full shadow-md"
+                className="flex flex-col h-full block-shadow"
                 renderImage={() => (
                   <img
                     className="max-h-[200px] object-cover rounded-md object-top w-full"
@@ -30,10 +29,10 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
                   />
                 )}
               >
-                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="text-lg md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {article.title}
                 </h5>
-                <p className="font-normal text-gray-700 dark:text-gray-400">{article.preview}</p>
+                <p className="text-xs font-normal text-gray-700 dark:text-gray-400">{article.preview}</p>
                 <div className="mt-4 flex space-x-3 lg:mt-6">
                   <a
                     href={article.source}
