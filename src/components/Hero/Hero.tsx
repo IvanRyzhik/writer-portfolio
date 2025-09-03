@@ -17,7 +17,7 @@ const HeroSection = () => {
           <Image
             width="200"
             height="200"
-            className="rounded-full mr-6 shadow-lg"
+            className="rounded-full mr-6 shadow-xl"
             src="/images/ksu.jpeg"
             alt="avatar"
           />
