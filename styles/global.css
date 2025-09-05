@@ -25,9 +25,9 @@
 }
 
 .block-shadow {
-  box-shadow: 7px 6px 5px 0px rgba(204,204,204,0.75);
-  -webkit-box-shadow: 7px 6px 5px 0px rgba(204,204,204,0.75);
-  -moz-box-shadow: 7px 6px 5px 0px rgba(204,204,204,0.75);
+  box-shadow: 7px 6px 5px 0px rgba(204, 204, 204, 0.75);
+  -webkit-box-shadow: 7px 6px 5px 0px rgba(204, 204, 204, 0.75);
+  -moz-box-shadow: 7px 6px 5px 0px rgba(204, 204, 204, 0.75);
 }
 
 .slick-list {

@@ -34,7 +34,7 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
         setLoaded(true);
       },
     },
-    []
+    [],
   );
 
   return (
@@ -63,7 +63,9 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
                 <h5 className="text-lg md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {article.title}
                 </h5>
-                <p className="text-xs font-normal text-gray-700 dark:text-gray-400">{article.preview}</p>
+                <p className="text-xs font-normal text-gray-700 dark:text-gray-400">
+                  {article.preview}
+                </p>
                 <div className="mt-4 flex justify-center md:justify-start space-x-3 lg:mt-6">
                   <a
                     href={article.source}
@@ -73,12 +75,14 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
                   >
                     View Source
                   </a>
-                  <button
-                    onClick={() => openModal(article.source)}
-                    className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 transition"
-                  >
-                    Read Here
-                  </button>
+                  {article.remoteAccess && (
+                    <button
+                      onClick={() => openModal(article.source)}
+                      className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 transition"
+                    >
+                      Read Here
+                    </button>
+                  )}
                 </div>
               </Card>
             </div>
@@ -90,7 +94,14 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
           onClick={() => instanceRef.current?.prev()}
           className="hidden md:flex items-center justify-center absolute -left-10 md:-left-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 md:w-6 md:h-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="w-5 h-5 md:w-6 md:h-6"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -100,7 +111,14 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
           onClick={() => instanceRef.current?.next()}
           className="hidden md:flex items-center justify-center absolute -right-10 md:-right-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 md:w-6 md:h-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="w-5 h-5 md:w-6 md:h-6"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>

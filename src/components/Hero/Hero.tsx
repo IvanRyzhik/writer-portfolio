@@ -17,8 +17,12 @@ const HeroSection = () => {
             alt="avatar"
           />
           <div className="mx-auto sm:mx-0 sm:my-0 mb-0 sm:mb-4 p-2 w-fit">
-            <h1 className="text-3xl md:text-5xl font-bold kitty-block text-white shadow-text">Ksenia Melnychenko</h1>
-            <p className="text-left text-xs md:text-lg z-10 relative text-white">SEO Content Writer, Storyteller & Ghostwriter</p>
+            <h1 className="text-3xl md:text-5xl font-bold kitty-block text-white shadow-text">
+              Ksenia Melnychenko
+            </h1>
+            <p className="text-left text-xs md:text-lg z-10 relative text-white">
+              SEO Content Writer, Storyteller & Ghostwriter
+            </p>
           </div>
         </div>
         <div className="relative z-20 px-6"></div>
