@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import { Card } from 'flowbite-react';
 
@@ -9,6 +9,8 @@ type ArticlesSliderProps = {
 };
 
 const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
+  const [loaded, setLoaded] = useState(false);
+
   const [sliderRef, instanceRef] = useKeenSlider(
     {
       loop: true,
@@ -24,6 +26,9 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
           slides: { perView: 3, spacing: 16 },
         },
       },
+      created() {
+        setLoaded(true);
+      },
     },
     []
   );
@@ -32,7 +37,11 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
     <section id="articles" className="p-8">
       <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 md:mb-10">Latest Articles</h2>
       <div className="slider-container relative">
-        <div ref={sliderRef} className="keen-slider">
+        <div
+          ref={sliderRef}
+          className={`keen-slider transition-opacity duration-300 ${loaded ? 'opacity-100' : 'opacity-0'}`}
+          style={{ minHeight: '380px' }}
+        >
           {articles.map((article) => (
             <div key={article.title} className="keen-slider__slide h-full flex px-2 md:px-4 pb-6">
               <Card

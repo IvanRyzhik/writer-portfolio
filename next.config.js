@@ -1,5 +1,14 @@
 // next.config.js
-const { setupDevPlatform } = require('@cloudflare/next-on-pages/next-dev');
+let setupDevPlatform;
+if (process.env.NODE_ENV === 'development') {
+  try {
+    ({ setupDevPlatform } = require('@cloudflare/next-on-pages/next-dev'));
+  } catch (e) {
+    console.warn(
+      "@cloudflare/next-on-pages not found; running dev without Cloudflare adapter."
+    );
+  }
+}
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -21,7 +30,7 @@ const nextConfig = {
   },
 };
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development' && typeof setupDevPlatform === 'function') {
   setupDevPlatform();
 }
 
