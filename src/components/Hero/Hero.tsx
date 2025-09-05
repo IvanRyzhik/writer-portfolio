@@ -12,7 +12,7 @@ const HeroSection = () => {
             priority
             fetchPriority="high"
             sizes="(max-width: 640px) 120px, 200px"
-            className="rounded-full m-auto mb-5 sm:mb-0 sm:m-0 sm:mr-6 shadow-xl w-[120px] h-[120px] md:w-[200px] md:h-[200px] object-cover border-white border"
+            className="rounded-full m-auto mb-1 sm:mb-0 sm:m-0 sm:mr-6 shadow-xl w-[150px] h-[150px] md:w-[200px] md:h-[200px] object-cover border-white border"
             src="/images/Ksu.png"
             alt="avatar"
           />

@@ -30,10 +30,10 @@ export default function Home() {
   return (
     <div className="bg-gray-50 min-h-screen font-sans pt-0 md:pt-0 p-3 md:p-6 pb-16 md:pb-24 relative">
       <Head>
-        <title>Ksenia Melnychenko — SEO Content Writer, Storyteller & Ghostwriter</title>
+        <title>SEO Content Writer & Outreach Ghostwriter | Ksenia Melnychenko</title>
         <meta
           name="description"
-          content="Portfolio of Ksenia Melnychenko — SEO content writer, storyteller, and ghostwriter. Explore latest articles, projects, and contact information."
+          content="Professional SEO content writer specializing in outreach articles, guest posts, and link-building content. Ghostwriting services for brands and startups seeking visibility and authority."
         />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Ksenia Melnychenko — SEO Content Writer" />
@@ -52,8 +52,8 @@ export default function Home() {
         <meta name="twitter:image" content="/images/Ksu.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="relative py-10">
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-screen h-[280px] sm:h-[200px] md:h-[280px]">
+      <div className="relative py-5 md:py-10">
+        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-screen h-[260px] sm:h-[200px] md:h-[280px]">
           <Image
             src="/images/background.png"
             alt="Hero background"
