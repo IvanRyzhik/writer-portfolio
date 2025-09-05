@@ -10,6 +10,7 @@ type ArticlesSliderProps = {
 
 const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
   const [loaded, setLoaded] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const [sliderRef, instanceRef] = useKeenSlider(
     {
@@ -26,16 +27,19 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
           slides: { perView: 3, spacing: 16 },
         },
       },
+      slideChanged(s) {
+        setCurrentSlide(s.track.details.rel);
+      },
       created() {
         setLoaded(true);
       },
     },
-    []
+    [],
   );
 
   return (
-    <section id="articles" className="p-8">
-      <h2 className="text-2xl md:text-4xl font-bold text-center mb-4 md:mb-10">Latest Articles</h2>
+    <section id="articles" className="py-4 md:p-8">
+      <h2 className="text-2xl md:text-4xl font-bold text-center mb-5 md:mb-10">Latest Articles</h2>
       <div className="slider-container relative">
         <div
           ref={sliderRef}
@@ -43,12 +47,12 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
           style={{ minHeight: '380px' }}
         >
           {articles.map((article) => (
-            <div key={article.title} className="keen-slider__slide h-full flex px-2 md:px-4 pb-6">
+            <div key={article.title} className="keen-slider__slide h-full flex px-2 md:px-4 pb-4">
               <Card
-                className="flex flex-col h-full block-shadow"
+                className="flex flex-col h-full block-shadow !border-gray-200"
                 renderImage={() => (
                   <img
-                    className="max-h-[200px] object-cover rounded-md object-top w-full"
+                    className="max-h-[200px] object-cover rounded-tl-md  rounded-tr-md object-top w-full"
                     width={500}
                     height={500}
                     src={article.src}
@@ -59,8 +63,10 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
                 <h5 className="text-lg md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {article.title}
                 </h5>
-                <p className="text-xs font-normal text-gray-700 dark:text-gray-400">{article.preview}</p>
-                <div className="mt-4 flex space-x-3 lg:mt-6">
+                <p className="text-xs font-normal text-gray-700 dark:text-gray-400">
+                  {article.preview}
+                </p>
+                <div className="mt-4 flex justify-center md:justify-start space-x-3 lg:mt-6">
                   <a
                     href={article.source}
                     target="_blank"
@@ -69,12 +75,14 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
                   >
                     View Source
                   </a>
-                  <button
-                    onClick={() => openModal(article.source)}
-                    className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 transition"
-                  >
-                    Read Here
-                  </button>
+                  {article.remoteAccess && (
+                    <button
+                      onClick={() => openModal(article.source)}
+                      className="bg-gray-800 text-white px-4 py-2 rounded-md hover:bg-gray-900 transition"
+                    >
+                      Read Here
+                    </button>
+                  )}
                 </div>
               </Card>
             </div>
@@ -84,9 +92,16 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
           type="button"
           aria-label="Previous"
           onClick={() => instanceRef.current?.prev()}
-          className="absolute -left-10 md:-left-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
+          className="hidden md:flex items-center justify-center absolute -left-10 md:-left-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 md:w-6 md:h-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="w-5 h-5 md:w-6 md:h-6"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
@@ -94,12 +109,37 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
           type="button"
           aria-label="Next"
           onClick={() => instanceRef.current?.next()}
-          className="absolute -right-10 md:-right-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
+          className="hidden md:flex items-center justify-center absolute -right-10 md:-right-11 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white shadow rounded-full p-2 md:p-3 z-10 border border-gray-200 backdrop-blur-sm focus:outline-none"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-5 h-5 md:w-6 md:h-6">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            className="w-5 h-5 md:w-6 md:h-6"
+          >
             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
           </svg>
         </button>
+        {loaded && (
+          <div className="md:hidden flex justify-center items-center gap-2 pb-2">
+            {articles.map((_, idx) => (
+              <button
+                key={idx}
+                aria-label={`Go to slide ${idx + 1}`}
+                onClick={() => instanceRef.current?.moveToIdx(idx)}
+                className="p-2"
+              >
+                <span
+                  className={`block w-3 h-3 rounded-full ${
+                    currentSlide === idx ? 'bg-gray-800' : 'bg-gray-300'
+                  }`}
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

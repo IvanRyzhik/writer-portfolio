@@ -4,9 +4,7 @@ if (process.env.NODE_ENV === 'development') {
   try {
     ({ setupDevPlatform } = require('@cloudflare/next-on-pages/next-dev'));
   } catch (e) {
-    console.warn(
-      "@cloudflare/next-on-pages not found; running dev without Cloudflare adapter."
-    );
+    console.warn('@cloudflare/next-on-pages not found; running dev without Cloudflare adapter.');
   }
 }
 
