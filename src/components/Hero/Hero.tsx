@@ -7,8 +7,11 @@ const HeroSection = () => {
       <section>
         <div className="block text-center sm:flex w-full justify-center md:justify-start z-10 relative items-center">
           <Image
-            width="200"
-            height="200"
+            width={200}
+            height={200}
+            priority
+            fetchPriority="high"
+            sizes="(max-width: 640px) 120px, 200px"
             className="rounded-full m-auto mb-5 sm:mb-0 sm:m-0 sm:mr-6 shadow-xl w-[120px] h-[120px] md:w-[200px] md:h-[200px] object-cover border-white border"
             src="/images/Ksu.png"
             alt="avatar"

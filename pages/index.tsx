@@ -2,6 +2,7 @@
 'use client';
 
 import React from 'react';
+import Head from 'next/head';
 import Image from 'next/image';
 import { useState } from 'react';
 import Modal from 'react-modal';
@@ -28,6 +29,29 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50 min-h-screen font-sans pt-0 md:pt-0 p-3 md:p-6 pb-16 md:pb-24 relative">
+      <Head>
+        <title>Ksenia Melnychenko — SEO Content Writer, Storyteller & Ghostwriter</title>
+        <meta
+          name="description"
+          content="Portfolio of Ksenia Melnychenko — SEO content writer, storyteller, and ghostwriter. Explore latest articles, projects, and contact information."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Ksenia Melnychenko — SEO Content Writer" />
+        <meta
+          property="og:description"
+          content="SEO-focused content, storytelling, and ghostwriting portfolio. Read samples and get in touch."
+        />
+        <meta property="og:image" content="/images/Ksu.png" />
+        <meta property="og:image:alt" content="Ksenia Melnychenko portfolio preview" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Ksenia Melnychenko — SEO Content Writer" />
+        <meta
+          name="twitter:description"
+          content="SEO content writing, storytelling, and ghostwriting portfolio."
+        />
+        <meta name="twitter:image" content="/images/Ksu.png" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className="relative py-10">
         <div className="absolute left-1/2 -translate-x-1/2 top-0 w-screen h-[280px] sm:h-[200px] md:h-[280px]">
           <Image
@@ -36,6 +60,7 @@ export default function Home() {
             fill
             sizes="100vw"
             priority
+            fetchPriority="high"
             className="object-cover"
           />
           <div aria-hidden className="absolute inset-0 bg-black/30 pointer-events-none" />
