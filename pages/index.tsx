@@ -7,6 +7,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import Modal from 'react-modal';
 import 'keen-slider/keen-slider.min.css';
+import Script from 'next/script';
 
 import ArticlesSlider from '../src/components/ArticlesSlider/ArticlesSlider';
 import HeroSection from '@components/Hero/Hero';
@@ -16,6 +17,7 @@ Modal.setAppElement('#__next');
 export default function Home() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalUrl, setModalUrl] = useState('');
+  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
   const openModal = (url: string) => {
     setModalUrl(url);
@@ -52,6 +54,22 @@ export default function Home() {
         <meta name="twitter:image" content="/images/Ksu.png" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {GA_ID && (
+        <>
+          <Script
+            strategy="afterInteractive"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          />
+          <Script id="ga-init" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+            `}
+          </Script>
+        </>
+      )}
       <div className="relative py-5 md:py-10">
         <div className="absolute left-1/2 -translate-x-1/2 top-0 w-screen h-[260px] sm:h-[200px] md:h-[280px]">
           <Image
