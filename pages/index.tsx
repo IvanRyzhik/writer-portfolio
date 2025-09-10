@@ -52,6 +52,7 @@ export default function Home() {
           content="SEO content writing, storytelling, and ghostwriting portfolio."
         />
         <meta name="twitter:image" content="/images/Ksu.png" />
+        <meta name="google-site-verification" content="0gTITs89vyCvSWxm7AAEaUkJkvHIf5s8VukivKO9bWk" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {GA_ID && (
