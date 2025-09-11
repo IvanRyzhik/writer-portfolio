@@ -116,7 +116,13 @@ export default function Home() {
             </svg>
           </a>
           <span className='mx-2'> or </span> */}
-          <a href="https://www.linkedin.com/in/kseniamely" target="_blank">
+          <a
+            href="https://www.linkedin.com/in/kseniamely"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn profile of Ksenia Melnychenko"
+            title="LinkedIn profile"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"

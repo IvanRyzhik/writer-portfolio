@@ -60,9 +60,9 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
                   />
                 )}
               >
-                <h5 className="text-lg md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h3 className="text-lg md:text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {article.title}
-                </h5>
+                </h3>
                 <p className="text-xs font-normal text-gray-700 dark:text-gray-400">
                   {article.preview}
                 </p>
