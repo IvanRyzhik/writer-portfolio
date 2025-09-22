@@ -12,11 +12,11 @@ const HeroSection = () => {
           priority
           fetchPriority="high"
           sizes="(max-width: 640px) 120px, 200px"
-          className="avatar rounded-full m-auto mb-1 sm:mb-0 sm:m-0 sm:mr-6 shadow-xl w-[150px] h-[150px] md:w-[200px] md:h-[200px] object-cover border-white border"
-          src="/images/Ksu.png"
+          className="avatar rounded-full m-auto mb-1 sm:mb-0 sm:m-0 sm:mr-4 shadow-xl w-[150px] h-[150px] md:w-[200px] md:h-[200px] object-cover border-white border"
+          src="/images/Ksu-1.png"
           alt="avatar"
         />
-        <div className="mx-auto sm:mx-0 sm:my-0 mb-0 sm:mb-4 p-2 w-fit">
+        <div className="mx-auto sm:mx-0 sm:my-0 mb-0 sm:mb-4 p-2 w-fit sm:mt-[65px] md:mt-[95px]">
           <h1 className="text-3xl md:text-5xl font-bold kitty-block">
             Ksenia Melnychenko
           </h1>

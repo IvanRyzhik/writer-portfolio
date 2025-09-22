@@ -5,7 +5,7 @@ import React from 'react';
 import { useState } from 'react';
 import 'keen-slider/keen-slider.min.css';
 
-import ArticlesSlider from '../src/components/ArticlesSlider/ArticlesSlider';
+import ArticlesGrid from '../src/components/ArticlesGrid/ArticlesGrid';
 import HeroSection from '@components/Hero/Hero';
 import Footer from '@components/Footer/Footer';
 import ArticleModal from '@components/ArticleModal/ArticleModal';
@@ -29,7 +29,7 @@ export default function Home() {
     <div className="bg-gray-50 min-h-screen font-sans pt-0 md:pt-0 p-3 md:p-6 pb-16 md:pb-24 relative">
       <SeoHead />
       <HeroSection />
-      <ArticlesSlider openModal={openModal} />
+      <ArticlesGrid openModal={openModal} />
       <ArticleModal isOpen={modalIsOpen} onRequestClose={closeModal} url={modalUrl} />
       <Footer />
     </div>

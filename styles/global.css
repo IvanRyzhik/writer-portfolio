@@ -46,3 +46,16 @@
   -webkit-text-stroke: 1px #ffffff;
   text-stroke: 1px #bbbaba;
 }
+
+.gradient {
+  background: #020024;
+  background: linear-gradient(180deg, rgba(184,211,234, 1) 0%, rgba(239,224,187, 1) 100%);
+}
+.gradient-footer {
+  background: #020024;
+  background: linear-gradient(180deg, rgba(239,224,187, 1) 0%, rgba(184,211,234, 1) 100%);
+}
+.avatar {
+  background: #EEAECA;
+  background: linear-gradient(359deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
