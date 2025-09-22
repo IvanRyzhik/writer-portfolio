@@ -56,7 +56,7 @@ const ArticlesSlider = ({ openModal }: ArticlesSliderProps) => {
                     width={500}
                     height={500}
                     src={article.src}
-                    alt={article.alt}
+                    alt={article.title}
                   />
                 )}
               >

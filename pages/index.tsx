@@ -2,22 +2,18 @@
 'use client';
 
 import React from 'react';
-import Head from 'next/head';
-import Image from 'next/image';
 import { useState } from 'react';
-import Modal from 'react-modal';
 import 'keen-slider/keen-slider.min.css';
-import Script from 'next/script';
 
 import ArticlesSlider from '../src/components/ArticlesSlider/ArticlesSlider';
 import HeroSection from '@components/Hero/Hero';
-
-Modal.setAppElement('#__next');
+import Footer from '@components/Footer/Footer';
+import ArticleModal from '@components/ArticleModal/ArticleModal';
+import SeoHead from '@components/SeoHead/SeoHead';
 
 export default function Home() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalUrl, setModalUrl] = useState('');
-  const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 
   const openModal = (url: string) => {
     setModalUrl(url);
@@ -31,110 +27,11 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50 min-h-screen font-sans pt-0 md:pt-0 p-3 md:p-6 pb-16 md:pb-24 relative">
-      <Head>
-        <title>SEO Content Writer & Outreach Ghostwriter | Ksenia Melnychenko</title>
-        <meta
-          name="description"
-          content="Professional SEO content writer specializing in outreach articles, guest posts, and link-building content. Ghostwriting services for brands and startups seeking visibility and authority."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Ksenia Melnychenko — SEO Content Writer" />
-        <meta
-          property="og:description"
-          content="SEO-focused content, storytelling, and ghostwriting portfolio. Read samples and get in touch."
-        />
-        <meta property="og:image" content="/images/Ksu.png" />
-        <meta property="og:image:alt" content="Ksenia Melnychenko portfolio preview" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Ksenia Melnychenko — SEO Content Writer" />
-        <meta
-          name="twitter:description"
-          content="SEO content writing, storytelling, and ghostwriting portfolio."
-        />
-        <meta name="twitter:image" content="/images/Ksu.png" />
-        <meta name="google-site-verification" content="0gTITs89vyCvSWxm7AAEaUkJkvHIf5s8VukivKO9bWk" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      {GA_ID && (
-        <>
-          <Script
-            strategy="afterInteractive"
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-          />
-          <Script id="ga-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}', { page_path: window.location.pathname });
-            `}
-          </Script>
-        </>
-      )}
-      <div className="relative py-5 md:py-10">
-        <div className="absolute left-1/2 -translate-x-1/2 top-0 w-screen h-[260px] sm:h-[200px] md:h-[280px]">
-          <Image
-            src="/images/background.png"
-            alt="Hero background"
-            fill
-            sizes="100vw"
-            priority
-            fetchPriority="high"
-            className="object-cover"
-          />
-          <div aria-hidden className="absolute inset-0 bg-black/30 pointer-events-none" />
-        </div>
-        <HeroSection />
-      </div>
-
+      <SeoHead />
+      <HeroSection />
       <ArticlesSlider openModal={openModal} />
-
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        className="bg-white w-full max-w-4xl mx-auto rounded-lg overflow-hidden shadow-2xl relative"
-        overlayClassName="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 z-50"
-      >
-        <iframe src={modalUrl} className="w-full h-[80vh]" />
-        <button
-          onClick={closeModal}
-          className="absolute top-3 right-3 bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition"
-        >
-          ✕
-        </button>
-      </Modal>
-
-      <footer
-        id="contact"
-        className="bg-gray-900 text-white py-4 md:py-8 text-center absolute w-full bottom-0 left-0"
-      >
-        <div className="w-full flex justify-center items-center">
-          {/* <p className='mx-2'>Contact me at</p>
-          <a href="mailto:kseniamelia@gmail.com" target="_blank" className="inline-block ">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="#0a66c2">
-              <path d="M12 13.065l-12-7.065h24l-12 7.065zm0 2.935l-12-7.065v11h24v-11l-12 7.065z" />
-            </svg>
-          </a>
-          <span className='mx-2'> or </span> */}
-          <a
-            href="https://www.linkedin.com/in/kseniamely"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile of Ksenia Melnychenko"
-            title="LinkedIn profile"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-              fill="#0A66C2"
-            >
-              <path d="M22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46C23.21 24 24 23.23 24 22.28V1.72C24 .77 23.21 0 22.23 0zM7.06 20.45H3.56V9h3.5v11.45zM5.31 7.57a2.03 2.03 0 110-4.06 2.03 2.03 0 010 4.06zm14.9 12.88h-3.5v-5.91c0-1.41-.03-3.23-1.97-3.23-1.97 0-2.27 1.54-2.27 3.13v6.01h-3.5V9h3.36v1.57h.05c.47-.9 1.61-1.85 3.32-1.85 3.55 0 4.21 2.34 4.21 5.39v6.9z" />
-            </svg>
-          </a>
-        </div>
-      </footer>
+      <ArticleModal isOpen={modalIsOpen} onRequestClose={closeModal} url={modalUrl} />
+      <Footer />
     </div>
   );
 }
