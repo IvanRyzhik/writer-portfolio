@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen font-sans pt-0 md:pt-0 p-3 md:p-6 pb-16 md:pb-24 relative">
+    <div className="bg-gray-50 min-h-screen font-sans pt-0 md:pt-0 py-3 md:py-4 pb-16 md:pb-24 relative">
       <SeoHead />
       <HeroSection />
       <ArticlesGrid openModal={openModal} />

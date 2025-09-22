@@ -4,7 +4,7 @@ const Footer: React.FC = () => {
   return (
     <footer
       id="contact"
-      className="gradient-footer text-white py-4 md:py-8 text-center absolute w-full bottom-0 left-0"
+      className="gradient text-white py-4 md:py-8 text-center absolute w-full bottom-0 left-0"
     >
       <div className="w-full flex justify-center items-center">
         <a

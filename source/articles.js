@@ -38,16 +38,6 @@ export const articles = [
     remoteAccess: true,
   },
   {
-    id: 2,
-    src: '/images/preview-2.png',
-    title: 'Microlearning Strategies for Reskilling the Modern Workforce: A Practical Guide',
-    preview:
-      'As automation accelerates, reskilling is essential. Microlearning—short, targeted lessons—offers just-in-time knowledge that fits busy schedules and evolving job needs. From scenario-based modules to gamification and peer insights, these strategies enable efficient, relevant learning and foster adaptability, ensuring employees remain competitive in a rapidly changing job market.',
-    source:
-      'https://www.thehrdirector.com/microlearning-strategies-reskilling-modern-workforce-practical-guide/',
-    remoteAccess: true,
-  },
-  {
     id: 7,
     src: '/images/preview-7.png',
     title: 'Best Audiobooks for Road Trips: Family-Friendly Picks',
@@ -74,6 +64,16 @@ export const articles = [
     preview:
       'Today, we’re sharing top books that feature travelling. Whether you enjoy nonfiction journeys or real stories about adventures across countries, this list covers a unique variety of books to inspire travel and is based on user feedback and bestseller rankings.',
     source: 'https://canarianweekly.com/posts/Books-to-Inspire-Travel-Your-next-destination-awaits',
+    remoteAccess: true,
+  },
+  {
+    id: 2,
+    src: '/images/preview-2.png',
+    title: 'Microlearning Strategies for Reskilling the Modern Workforce: A Practical Guide',
+    preview:
+      'As automation accelerates, reskilling is essential. Microlearning—short, targeted lessons—offers just-in-time knowledge that fits busy schedules and evolving job needs. From scenario-based modules to gamification and peer insights, these strategies enable efficient, relevant learning and foster adaptability, ensuring employees remain competitive in a rapidly changing job market.',
+    source:
+      'https://www.thehrdirector.com/microlearning-strategies-reskilling-modern-workforce-practical-guide/',
     remoteAccess: true,
   },
   {
