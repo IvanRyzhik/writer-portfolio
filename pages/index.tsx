@@ -3,7 +3,6 @@
 
 import React from 'react';
 import { useState } from 'react';
-import 'keen-slider/keen-slider.min.css';
 
 import ArticlesGrid from '../src/components/ArticlesGrid/ArticlesGrid';
 import HeroSection from '@components/Hero/Hero';
