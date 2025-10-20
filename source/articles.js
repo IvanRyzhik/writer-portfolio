@@ -95,6 +95,25 @@ export const articles = [
     source: 'https://millo.co/best-self-improvement-guide-to-help-you-achieve-work-life-balance',
     remoteAccess: true,
   },
+  {
+    id: 12,
+    src: '/images/preview-12.png',
+    title: 'Key Microlearning Trends That Can Transform Employee Skills',
+    preview:
+      'Microlearning methods are very different from the usual long training courses. Think of it this way: employees in a meeting room attend a 15-minute workshop that encourages them to learn in short, focused sprints.',
+    source: 'https://www.hraddict.com/microlearning-trends',
+    remoteAccess: false,
+  },
+  {
+    id: 13,
+    src: '/images/preview-13.png',
+    title: 'How to Write a Book Summary for Authors and Bloggers in 2025',
+    preview:
+      'If you are thinking about how to write a book summary, you probably ask yourself how to make it intriguing enough, what parts you should add or cut. A lot of authors online admit they freeze when they try to cut down a long text into a few paragraphs.',
+    source:
+      'https://bibisco.com/blog/how-to-write-a-book-summary-for-authors-and-bloggers-in-2025/',
+    remoteAccess: true,
+  },
   // {
   //   id: 1,
   //   src: '/images/preview-1.png',
