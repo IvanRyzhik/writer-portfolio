@@ -61,64 +61,72 @@ const ArticlesGrid = ({ openModal }: ArticlesGridProps) => {
   const hasMore = visibleCount < articles.length;
 
   return (
-    <section id="articles" className="p-4 md:p-8 gradient-footer mt-0">
-      <h2 className="text-2xl md:text-4xl font-bold text-center mb-5 md:mb-10 main-text">Latest Articles</h2>
-      <div className="slider-container relative max-w-[1440px] m-auto">
-        <div className="columns-1 gap-4 md:columns-2 md:gap-4 lg:columns-3">
-          {visibleArticles.map((article) => (
-            <div key={article.title} className="break-inside-avoid pb-4 md:pb-4">
-              <Card
-                className="group flex flex-col h-full block-shadow !border-gray-200 bg-white dark:bg-white p-1 cursor-pointer transition-transform duration-200 md:hover:scale-[1.03]"
-                theme={{
-                  root: {
-                    children: 'flex h-full flex-col justify-center gap-4 p-0 relative overflow-hidden pb-0 md:pb-6',
-                  },
-                }}
-                renderImage={() => (
-                  <img
-                    className="max-h-[200px] object-cover rounded-tl-md rounded-tr-md object-top w-full mb-2"
-                    width={500}
-                    height={500}
-                    src={article.src}
-                    alt={article.title}
-                    loading="lazy"
-                  />
-                )}
-              >
-                <h3 className="text-lg md:text-xl font-bold tracking-tight main-text px-2">
-                  {article.title}
-                </h3>
-                <p className="text-xs font-normal text-gray-700 dark:text-gray-700 px-2">
-                  {article.preview}
-                </p>
-                <div
-                  className="mt-auto action-gradient rounded-b-md w-full flex lg:mt-6 transition-all duration-600 ease-out md:gap-0 md:absolute md:-bottom-12 md:group-hover:bottom-0 bg-white"
+    <section id="articles" className="bg-[#fbfbfb] mt-0 py-4 md:py-8">
+      <div className="max-w-[1440px] mx-auto px-4 lg:px-6">
+        <h2 className="text-xl md:text-2xl font-normal text-left mb-2.5 md:mb-5 main-text">
+          Latest Articles
+        </h2>
+        <div className="slider-container relative">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            {visibleArticles.map((article) => (
+              <article key={article.title} className="relative h-[430px]">
+                <Card
+                  className="group relative flex flex-col h-full card-shadow !border-white hover:!border-gray-300 bg-white dark:bg-white p-1.5 overflow-hidden transition-colors duration-200"
+                  theme={{
+                    root: {
+                      children: 'flex h-full flex-col gap-3 p-0 overflow-hidden pb-3',
+                    },
+                  }}
                 >
-                  <a
-                    href={article.source}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full md:flex-1 px-4 py-2 rounded-b-md transition text-center flex items-center justify-center text-white hover:text-white duration-600 action-hover-gradient"
-                  >
-                    View Source
-                  </a>
-                  {article.remoteAccess && (
-                    <>
-                      <span className="w-px bg-white self-stretch" aria-hidden="true" />
-                      <button
-                        onClick={() => openModal(article.source)}
-                        className="w-full md:flex-1 px-4 py-2 transition text-white action-hover-gradient rounded-b-md"
+                  <div className="flex h-full flex-col gap-3">
+                    <div className="relative h-[200px] w-full overflow-hidden rounded-tl-md rounded-tr-md">
+                      <img
+                        className="h-full w-full object-cover object-top"
+                        width={500}
+                        height={500}
+                        src={article.src}
+                        alt={article.title}
+                        loading="lazy"
+                      />
+                      <div
+                        className="pointer-events-none absolute inset-0 bg-[#e1eec5] opacity-1000"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    <h3 className="text-lg md:text-xl font-normal tracking-tight main-text px-2">
+                      <a
+                        href={article.source}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="after:absolute after:inset-0 after:content-[''] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
                       >
-                        Read Here
+                        {article.title}
+                      </a>
+                    </h3>
+                    <p className="text-xs font-normal text-gray-700 dark:text-gray-700 px-2 line-clamp-4">
+                      {article.preview}
+                    </p>
+                    {article.remoteAccess && (
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          openModal(article.source);
+                        }}
+                        aria-label="Read article here in modal"
+                        className="relative z-10 mx-2 mt-auto inline-flex items-center justify-center rounded-full border border-white bg-white px-6 py-3 text-sm font-semibold text-black shadow-[0_3px_10px_rgba(0,0,0,0.08)] transition-colors duration-200 hover:border-gray-300"
+                      >
+                        Read here
                       </button>
-                    </>
-                  )}
-                </div>
-              </Card>
-            </div>
-          ))}
+                    )}
+                  </div>
+                </Card>
+              </article>
+            ))}
+          </div>
+          {hasMore && <div ref={sentinelRef} className="h-4 w-full" aria-hidden="true" />}
         </div>
-        {hasMore && <div ref={sentinelRef} className="h-4 w-full" aria-hidden="true" />}
       </div>
     </section>
   );
